@@ -34,3 +34,78 @@ body {
         background-color: #A9A9A9;
         color: white;
     }
+
+
+.edit-button {
+
+    background-color: #3498db;
+    color: black;
+    font-weight: bold; /* Negrito */
+}
+
+.detalhe-button {
+
+    background-color: #00FF7F;
+    color: black;
+    font-weight: bold; /* Negrito */
+}
+
+.delete-button {
+
+    background-color: #FA8072;
+    color: black;
+    font-weight: bold; /* Negrito */
+}
+
+.edit-button:hover {
+
+    background-color: #0000FF; /* Mudança de cor no hover */
+    color: white;
+}
+
+.detalhe-button:hover {
+
+    background-color: #006400; /* Mudança de cor no hover */
+    color: white;
+    font-weight: bold; /* Negrito */
+}
+
+.delete-button:hover {
+
+    background-color: #FF0000; /* Mudança de cor no hover */
+    color: white;
+}
+
+.criar-button {
+    border-radius: 10px;
+    background-color: #00FF7F;
+    color: black;
+    font-weight: bold; /* Negrito */
+    font-size: 20px;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+}
+
+.criar-button:hover {
+    background-color: #006400; /* Mudança de cor no hover */
+    color: white;
+    font-weight: bold; /* Negrito */
+}
+
+.voltar-button {
+    border-radius: 10px;
+    background-color: #D3D3D3;
+    color: black;
+    font-weight: bold; /* Negrito */
+    font-size: 15px;
+    display: inline-block;
+    text-align: center;
+    line-height: 20px;
+}
+
+    .voltar-button:hover {
+        background-color: #696969; /* Mudança de cor no hover */
+        color: white;
+        font-weight: bold; /* Negrito */
+    }

@@ -50,8 +50,17 @@
     </dl>
     
     <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+
+        <div>
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Delete" class="btn delete-button" style="display: block; width: 140px; border-radius:10px" />
+        </div>
+
+        <div>
+            <a class="btn voltar-button" style="display: block; width: 140px; margin-top:5px" asp-action="Index">
+                <img src="~/imgs/volte.png" />
+                <span>Back to List</span>
+            </a>
+        </div>
     </form>
 </div>

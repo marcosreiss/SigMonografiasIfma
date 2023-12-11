@@ -49,6 +49,12 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a class="btn edit-button" style="display: block; width: 140px; border-radius:10px" asp-action="Edit" asp-route-id="@Model?.Id">Edit</a>
+</div>
+
+<div>
+    <a class="btn voltar-button" style="display: block; width: 140px; margin-top:5px" asp-action="Index">
+        <img src="~/imgs/volte.png" />
+        <span>Back to List</span>
+    </a>
 </div>

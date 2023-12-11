@@ -28,14 +28,20 @@
             </span>
         </a>
         <ul class="treeview-menu">
-            <li class="menuLi" style="display: flex; align-items: center; border-radius: 10px">
-                <img src="~/imgs/alunoIcon.png" style="margin-left: 20px" />
-                <a style="color: #36BA2B; font-size: 16px" asp-controller="Aluno" asp-action="Index">Alunos</a>
+            <li >
+                <a class="btn menuLi" style="display: flex; align-items: center;" asp-controller="Aluno" asp-action="Index">
+                    <img src="~/imgs/alunoIcon.png" style="margin-left: 20px" />
+                    <span>Alunos</span>
+                </a>
+            
             </li>
 
-            <li class="menuLi" style="display: flex; align-items: center;">
-                <img src="~/imgs/professorIcon.png" style="margin-left: 20px" />
-                <a style="color: #36BA2B; font-size: 16px" asp-controller="Professor" asp-action="Index">Orientadores</a>
+            <li >
+                <a class="btn menuLi" style="display: flex; align-items: center;" asp-controller="Professor" asp-action="Index">
+                    <img src="~/imgs/professorIcon.png" style="margin-left: 20px" />
+                    <span>Professores</span>
+                </a>
+               
             </li>
         </ul>
     </li>
