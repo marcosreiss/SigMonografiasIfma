@@ -44,16 +44,18 @@
                 <span asp-validation-for="Campus" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Salvar" class="btn criar-button" style="width:140px" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="btn voltar-button" asp-action="Index" style="width:140px">
+        <img src="~/imgs/volte.png"></img>
+        <span>voltar</span>
+    </a>
 </div>
-
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

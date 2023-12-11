@@ -4,7 +4,7 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>Editar</h1>
 
 <h4>Monografia</h4>
 <hr />
@@ -49,14 +49,17 @@
                 <span asp-validation-for="OrientadorId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Salvar" class="btn criar-button" style="width:140px" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div >
+    <a class="btn voltar-button" asp-action="Index" style="width:140px">
+        <img src="~/imgs/volte.png"></img>
+        <span>voltar</span>
+    </a>
 </div>
 
 @section Scripts {

@@ -4,11 +4,17 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Monografias</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
+<br/>
+
+<p >
+    <a class="btn criar-button"  asp-action="Create">
+        <img src="~/imgs/adicionar.png" style="vertical-align: middle; margin-right: 10px;"></img>
+        <span style="vertical-align: middle;">adicionar</span>
+    </a>
 </p>
+<br />
 <table class="table" id="index-tables">
     <thead>
         <tr>
@@ -56,9 +62,9 @@
                     @Html.DisplayFor(modelItem => item.Orientador.Nome)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a class="btn edit-button" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    <a class="btn detalhe-button" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    <a class="btn delete-button" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                 </td>
             </tr>
         }
