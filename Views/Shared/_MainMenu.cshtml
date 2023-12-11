@@ -1,0 +1,31 @@
+﻿
+<ul class="sidebar-menu" data-widget="tree">
+
+    <li class="header">Menu</li>
+    <!-- Optionally, you can add icons to the links -->
+
+
+
+    <li>
+        <a asp-controller="Monografia" asp-action="Index">
+            <i class="fa fa-link"></i>
+            <span>Monografia</span>
+        </a>
+    </li>
+
+    
+
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-link"></i> <span>Docentes e dicentes</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+            <li><a asp-controller="Aluno" asp-action="Index">Alunos</a></li>
+            <li><a asp-controller="Professor" asp-action="Index">Professores Orientadores</a></li>
+        </ul>
+    </li>
+
+</ul>

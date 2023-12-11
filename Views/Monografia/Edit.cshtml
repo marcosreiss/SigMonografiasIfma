@@ -1,0 +1,64 @@
+﻿@model SigMonografiasIfma.Models.Monografia
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Monografia</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Titulo" class="control-label"></label>
+                <input asp-for="Titulo" class="form-control" />
+                <span asp-validation-for="Titulo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="checksum" class="control-label"></label>
+                <input asp-for="checksum" class="form-control" />
+                <span asp-validation-for="checksum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataApresentacao" class="control-label"></label>
+                <input asp-for="DataApresentacao" class="form-control" />
+                <span asp-validation-for="DataApresentacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QtPaginas" class="control-label"></label>
+                <input asp-for="QtPaginas" class="form-control" />
+                <span asp-validation-for="QtPaginas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pdf_ArquivoBinario" class="control-label"></label>
+                <input asp-for="Pdf_ArquivoBinario" class="form-control" />
+                <span asp-validation-for="Pdf_ArquivoBinario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlunoId" class="control-label"></label>
+                <select asp-for="AlunoId" class="form-control" asp-items="ViewBag.AlunoId"></select>
+                <span asp-validation-for="AlunoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrientadorId" class="control-label"></label>
+                <select asp-for="OrientadorId" class="form-control" asp-items="ViewBag.OrientadorId"></select>
+                <span asp-validation-for="OrientadorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
