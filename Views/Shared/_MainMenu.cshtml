@@ -1,31 +1,50 @@
 ﻿
+<link rel="stylesheet" href="~/css/site.css">
+
 <ul class="sidebar-menu" data-widget="tree">
 
-    <li class="header">Menu</li>
-    <!-- Optionally, you can add icons to the links -->
-
-
-
-    <li>
-        <a asp-controller="Monografia" asp-action="Index">
-            <i class="fa fa-link"></i>
-            <span>Monografia</span>
+    <br />
+    <li class="menuLi">
+        <a class="btn menuLi" style="display: flex; align-items: center;" asp-controller="Home" asp-action="Index">
+            <img src="~/imgs/home.png" />
+            <span style="margin:5px; border-radius: 10px; font-size: 16px">Home</span>
         </a>
     </li>
 
-    
+    <li class="menuLi">
+        <a class="btn menuLi" style="display: flex; align-items: center;" asp-controller="Monografia" asp-action="Index">
+            <img src="~/imgs/imgMonografia.png" />
+            <span style="margin:5px;border-radius: 10px; font-size: 16px">Monografia</span>
+        </a>
+    </li>
 
-    <li class="treeview">
-        <a href="#">
-            <i class="fa fa-link"></i> <span>Docentes e dicentes</span>
-            <span class="pull-right-container">
+
+    <li class="treeview" style="border-radius: 10px;background-color: #E0D7D7;color: #36BA2B;margin-top: 5px;">
+        <a href="#" style="display: flex; align-items: center;">
+            <img src="~/imgs/alunoIcon.png" style="width height:40" />
+            <span style="background-color: #E0D7D7;color: #36BA2B; font-size: 16px;border-radius: 10px">Docentes e dicentes</span>
+            <span class="pull-right-container menuLi">
                 <i class="fa fa-angle-left pull-right"></i>
             </span>
         </a>
         <ul class="treeview-menu">
-            <li><a asp-controller="Aluno" asp-action="Index">Alunos</a></li>
-            <li><a asp-controller="Professor" asp-action="Index">Professores Orientadores</a></li>
+            <li class="menuLi" style="display: flex; align-items: center; border-radius: 10px">
+                <img src="~/imgs/alunoIcon.png" style="margin-left: 20px" />
+                <a style="color: #36BA2B; font-size: 16px" asp-controller="Aluno" asp-action="Index">Alunos</a>
+            </li>
+
+            <li class="menuLi" style="display: flex; align-items: center;">
+                <img src="~/imgs/professorIcon.png" style="margin-left: 20px" />
+                <a style="color: #36BA2B; font-size: 16px" asp-controller="Professor" asp-action="Index">Orientadores</a>
+            </li>
         </ul>
+    </li>
+
+    <li class="menuLi">
+        <a class="btn menuLi" style="display: flex; align-items: center;" asp-controller="Home" asp-action="Index">
+            <img src="~/imgs/usuario.png" />
+            <span style="margin:5px; border-radius: 10px;font-size: 16px">Usuarios</span>
+        </a>
     </li>
 
 </ul>
