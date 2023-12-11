@@ -50,8 +50,8 @@ namespace SigMonografiasIfma.Controllers
         // GET: Monografias/Create
         public IActionResult Create()
         {
-            ViewData["AlunoId"] = new SelectList(_context.Alunos, "Id", "Campus");
-            ViewData["OrientadorId"] = new SelectList(_context.Orientadores, "Id", "Campus");
+            ViewData["AlunoId"] = new SelectList(_context.Alunos, "Id", "Nome");
+            ViewData["OrientadorId"] = new SelectList(_context.Orientadores, "Id", "Nome");
             return View();
         }
 
