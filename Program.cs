@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SigMonografiasIfma.Data;
+using SigMonografiasIfma.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,12 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 
 
+//AspNetIdentity
+builder.Services.AddIdentity<Funcionario, IdentityRole>(options =>
+    {
+
+    })
+    .AddEntityFrameworkStores<ApplicationDbContext>();
 
 
 // Add services to the container.
@@ -29,6 +37,11 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+//métodos do AspnetIdentity 
+app.UseAuthentication();
+app.UseAuthorization();
+
 
 app.UseAuthorization();
 
