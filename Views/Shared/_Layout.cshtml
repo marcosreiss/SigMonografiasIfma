@@ -21,10 +21,22 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     <!-- DataTables CSS -->
     <link href="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.css" rel="stylesheet">
+
+
+
+    <style>
+        .main-sidebar {
+            top: 80px; /* Experimente ajustar este valor conforme necessário */
+        }
+    </style>
+
+
+
+
 </head>
 
 <body class="hold-transition sidebar-mini" style="background-color: #616961">
-    <div class="wrapper">
+    <div class="wrapper" >
         <!-- Cabeçalho Principal -->
         <header class="main-header">
             <!-- Logo -->
@@ -32,14 +44,21 @@
                 <!-- Mini logotipo para barra lateral -->
                 <span style="color: #36BA2B" class="logo-mini">IFMA </span>
                 <!-- Logotipo para estado regular -->
-                <span style="color: #36BA2B;" class="logo-lg">IFMA:  <strong>Monografias</strong></span>
+                <img src="~/imgs/Sigmono.png"  />
             </a>
             <!-- Navegação do Cabeçalho -->
             <nav class="navbar navbar-static-top" role="navigation">
                 <!-- Botão de alternância da barra lateral-->
-                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button" style="color: #36BA2B;font-size: 30px;">
-                    <span class="sr-only">Alternar navegação</span>
+
+
+
+                <a href="#"  data-toggle="push-menu" role="button" style="color: #36BA2B;font-size: 30px;">
+                    <img src="~/imgs/side-menu.png" style="height: 35px;" />
+                     <span class="sr-only">Alternar navegação</span> 
                 </a>
+
+
+
                 <!-- Menu de Navegação Direita -->
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
@@ -56,10 +75,7 @@
                                 <!-- A imagem do usuário no menu -->
                                 <li class="user-header">
                                    
-                                    <p>
-                                        Macoratti - Macoratti.net
-                                        <small>Membro desde Nov. 2002</small>
-                                    </p>
+                                    
                                 </li>
                                 <!-- Corpo do Menu -->
                                 <li class="user-body">
@@ -90,7 +106,8 @@
             </nav>
         </header>
         <!-- Coluna do Lado Esquerdo. Contém o logotipo e a barra lateral -->
-        <aside class="main-sidebar">
+
+        <aside class="main-sidebar" >
             <!-- Barra lateral: o estilo pode ser encontrado em sidebar.less -->
             <section class="sidebar">
                
@@ -113,6 +130,10 @@
             <strong> 2023 - Sig Monografias Ifma - <a href="https://github.com/marcosreiss/MonografiasIfma.git">Código Aberto</a>.</strong>
         </footer>
     </div>
+
+
+
+
     <!-- ./wrapper -->
     <!-- SCRIPTS JS NECESSÁRIOS -->
     <!-- jQuery 3 -->

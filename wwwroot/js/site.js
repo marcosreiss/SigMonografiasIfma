@@ -5,6 +5,9 @@
 
 $(document).ready(function () {
     $('#index-tables').DataTable({
+        "lengthMenu": [[10], [10]], // Configura para mostrar apenas 10 itens por página
+        "pageLength": 10, // Define o número padrão de itens por página
+        "lengthChange": false, // Desabilita a opção de mudar o número de itens por página
         "ordering": true,
         "paging": true,
         "searching": true,
