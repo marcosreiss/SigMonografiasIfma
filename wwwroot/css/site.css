@@ -24,7 +24,8 @@ body {
 .menuLi {
     border-radius: 10px;
     background-color: #E0D7D7;
-    color: #36BA2B;
+    /*color: #36BA2B;*/
+    color:black;
     margin-top: 5px;
     font-size: 20px; /* Tamanho padrão da fonte */
     transition: background-color 0.3s;
