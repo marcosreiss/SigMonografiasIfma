@@ -60,7 +60,7 @@ namespace SigMonografiasIfma.Controllers
         // POST: Monografias/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize]
+        //[Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Titulo,checksum,DataApresentacao,QtPaginas,AlunoId,OrientadorId")] Monografia monografia, IFormFile MonografiaPDF)
@@ -147,10 +147,10 @@ namespace SigMonografiasIfma.Controllers
         // POST: Monografias/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize]
+        //[Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Titulo,checksum,DataApresentacao,QtPaginas,Pdf_ArquivoBinario,AlunoId,OrientadorId")] Monografia monografia)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Titulo,checksum,DataApresentacao,QtPaginas,Pdf_ArquivoBinario,AlunoId,OrientadorId")] Monografia monografia, IFormFile? newPdfFile)
         {
             if (id != monografia.Id)
             {
@@ -159,6 +159,39 @@ namespace SigMonografiasIfma.Controllers
 
             if (ModelState.IsValid)
             {
+
+                if (newPdfFile != null && newPdfFile.Length > 0)
+                {
+                    if (Path.GetExtension(newPdfFile.FileName).Equals(".pdf", StringComparison.OrdinalIgnoreCase))
+                    {
+                        // Se um novo arquivo foi enviado, atualize o Pdf_ArquivoBinario
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            await newPdfFile.CopyToAsync(ms);
+                            string checksum = CalculateChecksum(ms);
+                            monografia.checksum = checksum;
+                            monografia.Pdf_ArquivoBinario = ms.ToArray();
+                        }
+
+                    }
+                    else
+                    {
+                        // Define uma mensagem de erro se o arquivo não for um PDF
+                        ModelState.AddModelError("Pdf_ArquivoBinario", "*O arquivo tem que ser em formato de PDF*");
+                        ViewData["AlunoId"] = new SelectList(_context.Alunos, "Id", "Nome");
+                        ViewData["OrientadorId"] = new SelectList(_context.Orientadores, "Id", "Nome");
+                        return View(monografia);
+                    }
+                }
+                else
+                {
+                    // Se nenhum novo arquivo foi enviado, mantenha o PDF existente
+                    var existingMonografia = _context.Monografias.AsNoTracking().FirstOrDefault(m => m.Id == monografia.Id);
+                    if (existingMonografia != null)
+                    {
+                        monografia.Pdf_ArquivoBinario = existingMonografia.Pdf_ArquivoBinario;
+                    }
+                }
                 try
                 {
                     _context.Update(monografia);
@@ -181,6 +214,7 @@ namespace SigMonografiasIfma.Controllers
             ViewData["OrientadorId"] = new SelectList(_context.Orientadores, "Id", "Nome", monografia.OrientadorId);
             return View(monografia);
         }
+
 
         // GET: Monografias/Delete/5
         [Authorize]
@@ -218,14 +252,16 @@ namespace SigMonografiasIfma.Controllers
             {
                 _context.Monografias.Remove(monografia);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool MonografiaExists(int id)
         {
-          return (_context.Monografias?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Monografias?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
+
+ 
 }
