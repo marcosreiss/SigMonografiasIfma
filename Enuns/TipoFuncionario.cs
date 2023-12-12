@@ -3,6 +3,6 @@
     public enum TipoFuncionario
     {
         ChefeSetor = 1,
-        Funcionario = 2
+        FuncionarioComum = 2
     }
 }

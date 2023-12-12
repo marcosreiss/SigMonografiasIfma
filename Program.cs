@@ -15,7 +15,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 //AspNetIdentity
 builder.Services.AddIdentity<Funcionario, IdentityRole>(options =>
     {
-
+        
     })
     .AddEntityFrameworkStores<ApplicationDbContext>();
 

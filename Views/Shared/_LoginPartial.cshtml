@@ -1,0 +1,25 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<Funcionario> SingInManager
+
+@if (SingInManager.IsSignedIn(User))
+{
+    <ul class="nav-item">
+        <form method="post" asp-controller="Funcionario" asp-action="Logout">
+            <button type="submit" style="width:auto" class="nav-link btn btn-link py-0">
+                Logout @User.Identity.Name
+            </button>
+        </form>
+    </ul>
+}
+else
+{
+    <ul class="nav-item">
+        <a class="nav-link" asp-controller="Funcionario" asp-action="Registro">
+            Cadastrar Funcionário
+        </a>
+
+        <a class="nav-link" asp-controller="Funcionario" asp-action="Login">
+            Login
+        </a>
+    </ul>
+}
