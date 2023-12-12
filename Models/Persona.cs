@@ -15,7 +15,7 @@ namespace SigMonografiasIfma.Models
         [DisplayName("Email")]
         [Required(ErrorMessage = "*")]
         [RegularExpression(@"[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,4}", ErrorMessage = "Insira um email válido")]
-        public string Email { get; set; }
+        public virtual string Email { get; set; }
 
         [DisplayName("Telefone")]
         [Required(ErrorMessage = "*")]

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SigMonografiasIfma.Data;
@@ -18,6 +19,18 @@ builder.Services.AddIdentity<Funcionario, IdentityRole>(options =>
         
     })
     .AddEntityFrameworkStores<ApplicationDbContext>();
+//Configurando propriedades do esquema de autenticação baseado em cookies
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.Cookie.Name = "SigMonografias.Cookies"; //Nome do Cookie
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(5); //Tempo de expiração
+        options.SlidingExpiration = true;  //Será emitido um novo cookie sempre que um request for precessado e mais da metade da janela de expiração tiver sido transcorrido
+    });
+
+
+
+
 
 
 // Add services to the container.

@@ -4,11 +4,13 @@
 @if (SingInManager.IsSignedIn(User))
 {
     <ul class="nav-item">
-        <form method="post" asp-controller="Funcionario" asp-action="Logout">
-            <button type="submit" style="width:auto" class="nav-link btn btn-link py-0">
-                Logout @User.Identity.Name
-            </button>
-        </form>
+        <div class="btn btn-default btn-flat">
+            <form method="post" asp-controller="Funcionario" asp-action="Logout">
+                <button type="submit" style="width:auto" class="nav-link btn btn-link py-0">
+                    Logout @User.Identity.Name
+                </button>
+            </form>
+        </div>
     </ul>
 }
 else
@@ -18,8 +20,10 @@ else
             Cadastrar Funcionário
         </a> *@
 
-        <a class="nav-link" asp-controller="Funcionario" asp-action="Login">
-            Login
-        </a>
+        <div class="btn btn-default btn-flat">
+            <a class="nav-link" asp-controller="Funcionario" asp-action="Login">
+                Login
+            </a>
+        </div>
     </ul>
 }

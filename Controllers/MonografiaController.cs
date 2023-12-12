@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -48,6 +49,7 @@ namespace SigMonografiasIfma.Controllers
         }
 
         // GET: Monografias/Create
+        [Authorize]
         public IActionResult Create()
         {
             ViewData["AlunoId"] = new SelectList(_context.Alunos, "Id", "Nome");
@@ -58,6 +60,7 @@ namespace SigMonografiasIfma.Controllers
         // POST: Monografias/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Titulo,checksum,DataApresentacao,QtPaginas,AlunoId,OrientadorId")] Monografia monografia, IFormFile MonografiaPDF)
@@ -123,6 +126,7 @@ namespace SigMonografiasIfma.Controllers
 
 
         // GET: Monografias/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Monografias == null)
@@ -143,6 +147,7 @@ namespace SigMonografiasIfma.Controllers
         // POST: Monografias/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Titulo,checksum,DataApresentacao,QtPaginas,Pdf_ArquivoBinario,AlunoId,OrientadorId")] Monografia monografia)
@@ -178,6 +183,7 @@ namespace SigMonografiasIfma.Controllers
         }
 
         // GET: Monografias/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Monografias == null)
@@ -198,6 +204,7 @@ namespace SigMonografiasIfma.Controllers
         }
 
         // POST: Monografias/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

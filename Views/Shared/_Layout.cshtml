@@ -50,7 +50,7 @@
                                 <!-- A imagem do usuário na barra de navegação -->
                                 <img src="~/imgs/usuario.png" class="user-image" alt="Usuário">
                                 <!-- hidden-xs oculta o nome de usuário em dispositivos pequenos, mostrando apenas a imagem. -->
-                                <span class="hidden-xs">Macoratti</span>
+                                <span class="hidden-xs">UserName</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- A imagem do usuário no menu -->
@@ -72,9 +72,12 @@
                                 </li>
                                 <!-- Rodapé do Menu -->
                                 <li class="user-footer">
-                                    <div class="pull-left">
+                                    <div class="pull-left ">
                                         @* <a href="#" class="btn btn-default btn-flat">Perfil</a> *@
-                                        <partial name="_LoginPartial" />
+                                        
+                                            <partial name="_LoginPartial" />
+                                        
+                                        
                                     </div>
                                     <div class="pull-right">
                                         <a href="#" class="btn btn-default btn-flat">Sair</a>

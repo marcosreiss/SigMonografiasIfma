@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SigMonografiasIfma.Models;
 
 namespace SigMonografiasIfma.Controllers
 {
+    
     public class FuncionarioController : Controller
     {
         private readonly UserManager<Funcionario> _userManager;
@@ -14,13 +16,13 @@ namespace SigMonografiasIfma.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
         }
-
-        [HttpPost]
+        [Authorize]
+        [HttpGet]
         public IActionResult Registro()
         {
             return View();
         }
-
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Registro(RegisterViewModel model)
         {
@@ -31,8 +33,10 @@ namespace SigMonografiasIfma.Controllers
                 var user = new Funcionario
                 {
                     UserName = model.Login,
+                    Login = model.Login,
                     Nome = model.Nome,
                     Telefone = model.Telefone,
+                    PhoneNumber = model.Telefone,
                     Cidade = model.Cidade,
                     Campus = model.Campus,
                     NivelAcesso = Enuns.TipoFuncionario.FuncionarioComum
@@ -76,6 +80,13 @@ namespace SigMonografiasIfma.Controllers
                 ModelState.AddModelError(string.Empty, "Login Inválido");
             }
             return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
         }
 
     }
