@@ -16,6 +16,8 @@ namespace SigMonografiasIfma.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
         }
+
+
         [Authorize]
         [HttpGet]
         public IActionResult Registro()
