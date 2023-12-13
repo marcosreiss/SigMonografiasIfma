@@ -12,7 +12,10 @@
                 display: flex;
                 align-items: center;
                 padding: 10px;
+                cursor: pointer;
             }
+
+            
 
             #container-dropdown{
             position: relative;
@@ -26,24 +29,26 @@
         #reis-dropdown li, #reis-dropdown a {
             font-size:17.6px;
         }
-        /* ------------------------------------ */
-
-
-
-
-
 
         </style>
+
+    
 
     </head>
 
 @if (SingInManager.IsSignedIn(User))
 {
-    <a class="dropdown-toggle" data-toggle="dropdown" id="singed-user">
+    <a class="dropdown-toggle" data-toggle="dropdown" id="singed-user" style="background-color: #616961">
 
         <img src="~/imgs/usuario.png" class="user-image" alt="Usuário" id="user-img">
 
-        <h6><span class="badge badge-light hidden-xs">Bem Vindo @User.Identity.Name</span></h6>
+        <h6><span class="badge badge-light hidden-xs">
+            
+            Bem Vindo @User.Identity.Name
+            <i class="fa-solid fa-caret-down" style="color: black; padding-left:10px"></i>
+        </span></h6>
+        
+        
     </a>
 
     <ul class="dropdown-menu" id="reis-dropdown" >
