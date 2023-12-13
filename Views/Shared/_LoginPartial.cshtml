@@ -13,6 +13,26 @@
                 align-items: center;
                 padding: 10px;
             }
+
+            #container-dropdown{
+            position: relative;
+            display: inline-block;
+            }
+
+        #reis-dropdown{
+            background-color: gray ;
+            font-size: 20px;
+        }
+        #reis-dropdown li, #reis-dropdown a {
+            font-size:17.6px;
+        }
+        /* ------------------------------------ */
+
+
+
+
+
+
         </style>
 
     </head>
@@ -23,33 +43,32 @@
 
         <img src="~/imgs/usuario.png" class="user-image" alt="Usuário" id="user-img">
 
-        <h6><span class="badge badge-light">Bem Vindo @User.Identity.Name</span></h6>
+        <h6><span class="badge badge-light hidden-xs">Bem Vindo @User.Identity.Name</span></h6>
     </a>
 
-    <ul class="dropdown-menu">
-
-        <!-- Corpo do Menu -->
-        <li class="user-body">
-            <div class="row">
-                <div class="col-xs-4 text-center">
-                    <a href="#">Conta</a>
-                </div>
-            </div>
-            <!-- /.row -->
-        </li>
+    <ul class="dropdown-menu" id="reis-dropdown" >
 
 
         <!-- Rodapé do Menu -->
-        <li class="user-footer">
+        <li class="user-header">
 
 
-            <div class="pull-left">
-                <a href="#" class="btn btn-default btn-flat">Perfil</a>
+            <div class="btn pull-left">
+
+
+
+                <a href="#" class="btn btn-default ">
+                    <i class="fa-solid fa-user" style="color: #36BA2B;"></i>
+                    Perfil
+                </a>
             </div>
 
 
-            <div class="pull-right">
-                <a asp-controller="Funcionario" asp-action="Logout" class="btn btn-default btn-flat">Sair</a>
+            <div class="btn pull-right">
+                <a asp-controller="Funcionario" asp-action="Logout" class="btn btn-default btn-flat">
+                    <i class="fa-solid fa-right-from-bracket" style="color: #36BA2B;"></i>
+                    Sair
+                </a>
             </div>
 
         </li>
