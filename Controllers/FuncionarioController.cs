@@ -10,11 +10,15 @@ namespace SigMonografiasIfma.Controllers
     {
         private readonly UserManager<Funcionario> _userManager;
         private readonly SignInManager<Funcionario> _signInManager;
+        //
+        private readonly ILogger<FuncionarioController> _logger;
 
-        public FuncionarioController(UserManager<Funcionario> userManager, SignInManager<Funcionario> signInManager)
+
+        public FuncionarioController(UserManager<Funcionario> userManager, SignInManager<Funcionario> signInManager, ILogger<FuncionarioController> logger)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _logger = logger;
         }
 
 
@@ -48,7 +52,7 @@ namespace SigMonografiasIfma.Controllers
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Monografia");
                 }
 
                 foreach(var error in result.Errors)
@@ -76,7 +80,7 @@ namespace SigMonografiasIfma.Controllers
 
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Monografia");
                 }
 
                 ModelState.AddModelError(string.Empty, "Login Inválido");
@@ -84,11 +88,11 @@ namespace SigMonografiasIfma.Controllers
             return View(model);
         }
 
-        [HttpPost]
+       
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Monografia");
         }
 
     }
