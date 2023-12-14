@@ -22,13 +22,13 @@ namespace SigMonografiasIfma.Controllers
         }
 
 
-        [Authorize]
+       
         [HttpGet]
         public IActionResult Registro()
         {
             return View();
         }
-        [Authorize]
+     
         [HttpPost]
         public async Task<IActionResult> Registro(RegisterViewModel model)
         {

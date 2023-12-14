@@ -11,7 +11,7 @@ using SigMonografiasIfma.Models;
 
 namespace SigMonografiasIfma.Controllers
 {
-    [Authorize]
+   
     public class ProfessorController : Controller
     {
         private readonly ApplicationDbContext _context;
