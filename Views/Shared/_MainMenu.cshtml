@@ -21,17 +21,18 @@
 
 
     <li class="treeview" style="border-radius: 10px;background-color: #E0D7D7;color: #36BA2B;margin-top: 5px;">
-        <a href="#" style="display: flex; align-items: center;">
-            <img src="~/imgs/alunoIcon.png" style="width height:40" />
-            <span style="background-color: #E0D7D7;color: black; font-size: 16px;border-radius: 10px">Docentes e dicentes</span>
-            <span class="pull-right-container menuLi">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
+        <a href="#" class="menuLi" style="display: flex; align-items: center; justify-content: space-between">
+            <i class="fa-solid fa-graduation-cap" style="color: #36BA2B;"></i>
+            <span style="color: black; font-size: 16px;border-radius: 10px">Docentes e dicentes</span>
+            <div style="padding-bottom: 5px; padding-right: 5x" >
+                <i class="fa-solid fa-sort-down " style="color: black"></i>  
+            </div>
+            
         </a>
         <ul class="treeview-menu">
-            <li >
+            <li>
                 <a class="btn menuLi" style="display: flex; align-items: center;" asp-controller="Aluno" asp-action="Index">
-                    <img src="~/imgs/alunoIcon.png" style="margin-left: 20px" />
+                    <img src="~/imgs/alunoIcon.png" style="margin-left: 10px; margin-right:12px" />
                     <span>Alunos</span>
                 </a>
             
@@ -39,7 +40,7 @@
 
             <li >
                 <a class="btn menuLi" style="display: flex; align-items: center;" asp-controller="Professor" asp-action="Index">
-                    <img src="~/imgs/professorIcon.png" style="margin-left: 20px" />
+                    <img src="~/imgs/professorIcon.png" style="margin-left: 10px; margin-right:12px" />
                     <span>Professores</span>
                 </a>
                

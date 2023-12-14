@@ -22,8 +22,6 @@
     <!-- DataTables CSS -->
     <link href="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.css" rel="stylesheet">
 
-
-
     <style>
         .main-sidebar {
             top: 80px; /* Experimente ajustar este valor conforme necessário */
@@ -35,16 +33,7 @@
             padding: 10px ;
         }
 
-        
-        
-        
-
     </style>
-
-    
-
-
-
 
 </head>
 
@@ -53,27 +42,29 @@
         <!-- Cabeçalho Principal -->
         <header class="main-header">
             <!-- Logo -->
-            <a asp-controller="Home" asp-action="Index" class="logo" style=" margin-top: 7px">
+            <a asp-controller="Monografia" asp-action="Index" class="logo" style=" margin-top: 7px">
                 <!-- Mini logotipo para barra lateral -->
-                <span style="color: #36BA2B" class="logo-mini">IFMA </span>
+                <span class="logo-mini"> 
+                    <i class="fa-regular fa-file-word" style="color: #36BA2B;"></i>
+                </span>
                 <!-- Logotipo para estado regular -->
                 <img src="~/imgs/Sigmono.png"  />
             </a>
             <!-- Navegação do Cabeçalho -->
-            <nav class="navbar navbar-static-top" role="navigation">
+            <nav class="navbar navbar-static-top" role="navigation" style="display: flex; align-items:center;">
                 <!-- Botão de alternância da barra lateral-->
 
 
 
-                <a href="#"  data-toggle="push-menu" role="button" style="color: #36BA2B;font-size: 30px;">
-                    <img src="~/imgs/side-menu.png" style="height: 35px;" />
+                <a href="#"  data-toggle="push-menu" role="button" style="font-size: 30px; padding-left: 10px">
+                    <i class="fa-solid fa-bars" style="color: #36BA2B;"></i>
                      <span class="sr-only">Alternar navegação</span> 
                 </a>
 
 
 
                 <!-- Menu de Autenticação do Usuário a direita -->
-                <div class="navbar-custom-menu" >
+                <div class="navbar-custom-menu" style="padding-left:800px" >
 
                     <ul class="nav navbar-nav" >
 
