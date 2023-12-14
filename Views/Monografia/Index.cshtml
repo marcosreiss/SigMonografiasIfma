@@ -15,7 +15,7 @@
     </a>
 </p>
 <br />
-<table class="table " id="index-tables">
+<table class="table table-bordered table-hover " id="index-tables">
     <thead>
         <tr>
             <th>
@@ -27,9 +27,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.QtPaginas)
             </th>
-            @* <th>
-            @Html.DisplayNameFor(model => model.Pdf_ArquivoBinario)
-            </th> *@
+            
             <th>
                 @Html.DisplayNameFor(model => model.Aluno)
             </th>
@@ -52,9 +50,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.QtPaginas)
                 </td>
-                @*  <td>
-            @Html.DisplayFor(modelItem => item.Pdf_ArquivoBinario)
-            </td> *@
+                
                 <td>
                     @Html.DisplayFor(modelItem => item.Aluno.Nome)
                 </td>
