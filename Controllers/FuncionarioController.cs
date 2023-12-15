@@ -65,13 +65,13 @@ namespace SigMonografiasIfma.Controllers
         }
 
         [HttpGet]
-        public IActionResult Login()
+        public IActionResult LoginR()
         {
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(LoginViewModel model)
+        public async Task<IActionResult> LoginR(LoginViewModel model)
         {
             if (ModelState.IsValid)
             {

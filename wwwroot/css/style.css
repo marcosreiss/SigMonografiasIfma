@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center; /* Centralização horizontal */
+    align-items: center; /* Centralização vertical */
+    height: 100vh; /* Ajuste conforme necessário para o tamanho desejado */
+    background-color: #d2cec3;
+    font-family: sans-serif;
+}
+
+button{
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+a{
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
+    height: 90vh;
+}
+
+.content-left{
+    height: 100%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #5cb176;
+    border-radius: 20px 0 0 20px;
+
+
+}
+
+.centralize-left{
+    text-align: center;
+}
+
+.centralize-left h1{
+    font-size: 3vw;
+}
+
+.centralize-left p {
+    font-size: 15px;
+    font-weight:lighter;
+    padding: 30px 0;
+    font-style: italic;
+}
+
+.centralize-left button{
+    background-color: #5cb176;
+    border: 1px solid white;
+}
+
+.centralize-left a{
+    color: white;
+}
+
+.content-right{
+    height: 100%;
+    width: 60%;
+    background-color: white;
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centralize-right{
+    display: grid;
+    place-items: center;
+}
+.centralize-right h1{
+    text-align: center;
+    font-size: 5vw;
+    color: #5cb176;
+    margin-bottom: 30px;
+}
+
+#logo{
+    margin-top: 20px;
+    font-size: 100px;
+}
+
+.input{
+    background-color:#F2F2F2;
+    padding: 10px 30px;
+    margin: 5px 0 10px 0;
+}
+
+input{
+    border: none;
+    background-color:#F2F2F2;
+}
+
+input:focus{
+    outline: none;
+}
+
+#btn-remember{
+    background-color: white;
+    color: gray;
+    padding: 5px;
+    border-radius: 0;
+}
+
+.centralize-right button{
+    margin-top: 30px;
+    background-color: #5cb176;
+    padding: 12px 40px;
+    color: white;
+    margin-left: 50px;
+}
