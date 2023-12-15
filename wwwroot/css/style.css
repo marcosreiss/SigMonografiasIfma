@@ -94,6 +94,9 @@ a{
     font-size: 100px;
 }
 
+.form button {
+    cursor: pointer;
+}
 .input{
     background-color:#F2F2F2;
     padding: 10px 30px;

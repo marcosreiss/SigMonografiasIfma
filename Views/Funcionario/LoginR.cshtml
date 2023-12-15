@@ -1,4 +1,5 @@
 ﻿@page
+@model LoginViewModel
 @{
     Layout = null;
 
@@ -24,7 +25,7 @@
                 <i id="logo" class="fa-solid fa-file-pen" style="color: #ffffff;"></i>
                 <p>Área reservada para os Funcionários <br> do setor DCOMP</p>
                 <button>
-                    <a href="#">Novo Funcionário</a>
+                    <a asp-controller="Funcionario" asp-action="Registro">Novo Funcionário</a>
                 </button>
             </div><!--Centralize-->
         </div><!--Content left-->
@@ -34,7 +35,7 @@
 
                 <h1>Login</h1>
 
-                
+                <form method="post">
                     <div class="form">
                         <div class="input">
                             <label for="user">
@@ -46,17 +47,15 @@
                             <label for="password">
                                 <i class="fa-solid fa-lock" style="color: gray;"></i>
                             </label>
-                            <input  type="password" id="password" placeholder="Senha" onkeydown="return (event.key !== ' ');">
+                            <input type="password" id="password" placeholder="Senha" onkeydown="return (event.key !== ' ');">
                         </div>
                         <button id="btn-remember">
-                           Esqueci minha senha
+                            Esqueci minha senha
                         </button>
                     </div><!--form-->
-                    <button type="submit"> SING IP </button>
-            
+                     <button type="submit"> SING IP </button> 
 
-
-
+                </form>
             </div><!--Centralize right-->
         </div><!--content right-->
     </div><!--Content-->
