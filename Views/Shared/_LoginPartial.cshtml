@@ -2,10 +2,6 @@
 @inject SignInManager<Funcionario> SingInManager
 
     <head>
-
-
-
-
         <style>
             #singed-user
             {
@@ -14,26 +10,18 @@
                 padding: 10px;
                 cursor: pointer;
             }
-
-            
-
             #container-dropdown{
             position: relative;
             display: inline-block;
             }
-
-        #reis-dropdown{
-            background-color: gray ;
-            font-size: 20px;
-        }
-        #reis-dropdown li, #reis-dropdown a {
-            font-size:17.6px;
-        }
-
+            #reis-dropdown{
+                background-color: gray ;
+                font-size: 20px;
+            }
+            #reis-dropdown li, #reis-dropdown a {
+                font-size:17.6px;
+            }
         </style>
-
-    
-
     </head>
 
 @if (SingInManager.IsSignedIn(User))
@@ -79,50 +67,14 @@
         </li>
 
     </ul>
-    
-    
-    
-    @* <ul class="nav-item" style="padding-left:0">
-        <div class="btn btn-default btn-flat">
-            <form method="post" asp-controller="Funcionario" asp-action="Logout">
-                <button type="submit" style="width:auto;" class="nav-link btn btn-link py-0"> 
-                    Logout @User.Identity.Name
-                </button>
-            </form>
-        </div>
-    </ul> *@
 }
 else
 {
 
-    <a class="dropdown-toggle" asp-controller="Funcionario" asp-action="LoginR" id="singed-user">
+    <a class="dropdown-toggle" asp-controller="Funcionario" asp-action="Login" id="singed-user">
 
         <img src="~/imgs/usuario.png" class="user-image" alt="Usuário" id="user-img">
 
         <h6><span class="badge badge-light">Login</span></h6>
     </a>
-
-
-
-
-
-
-    @* <ul class="nav-item">
-       @*  <a class="nav-link" asp-controller="Funcionario" asp-action="Registro">
-            Cadastrar Funcionário
-        </a> 
-
-        <div class="btn btn-default btn-flat">
-            <a class="nav-link" asp-controller="Funcionario" asp-action="Login">
-                Login
-            </a>
-        </div>
-    </ul> *@
 }
-
-
-
-
-
-
-
