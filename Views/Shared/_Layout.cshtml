@@ -1,182 +1,72 @@
 ﻿<!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <!-- Metadados -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Painel de Administração</title>
-    <!-- Meta tag para design responsivo -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="~/bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="~/bower_components/font-awesome/css/font-awesome.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="~/bower_components/Ionicons/css/ionicons.min.css">
-    <!-- Estilos do AdminLTE -->
-    <link rel="stylesheet" href="~/dist/css/AdminLTE.min.css">
-    <link rel="stylesheet" href="~/dist/css/skins/skin-blue.min.css">
-    <!-- Fonte do Google -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-    <!-- DataTables CSS -->
-    <link href="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.css" rel="stylesheet">
-
-    <style>
-        .main-sidebar {
-            top: 80px; /* Experimente ajustar este valor conforme necessário */
-        }
-
-        #user-link {
-            display: flex;
-            align-items: center;
-            padding: 10px ;
-        }
-
-    </style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/dashboard.css">
+    <title>@ViewData["Title"]</title>
 </head>
+<body>
 
-<body class="hold-transition sidebar-mini" style="background-color: #616961">
-    <div class="wrapper" >
-        <!-- Cabeçalho Principal -->
-        <header class="main-header">
-            <!-- Logo -->
-            <a asp-controller="Monografia" asp-action="Index" class="logo" style=" margin-top: 7px">
-                <!-- Mini logotipo para barra lateral -->
-                <span class="logo-mini"> 
-                    <i class="fa-regular fa-file-word" style="color: #36BA2B;"></i>
-                </span>
-                <!-- Logotipo para estado regular -->
-                <img src="~/imgs/Sigmono.png"  />
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="#">
+                <img src="imgs/Sigmono.png" alt="sig Monografias Ifma">
             </a>
-            <!-- Navegação do Cabeçalho -->
-            <nav class="navbar navbar-static-top" role="navigation" style="display: flex; align-items:center;">
-                <!-- Botão de alternância da barra lateral-->
-
-
-
-                <a href="#"  data-toggle="push-menu" role="button" style="font-size: 30px; padding-left: 10px">
-                    <i class="fa-solid fa-bars" style="color: #36BA2B;"></i>
-                     <span class="sr-only">Alternar navegação</span> 
-                </a>
-
-
-
-                <!-- Menu de Autenticação do Usuário a direita -->
-                <div class="navbar-custom-menu" style="padding-left:800px" >
-
-                    <ul class="nav navbar-nav" >
-
-                        <!-- Menu de Conta do Usuário -->
-                        <li class="dropdown user user-menu ">
-                            <!-- Botão de Alternância de Menu -->
-
-
-                           
-
-                            <di id="user-link" >
-                                <Partial name ="_LoginPartial" />
-                            </di>
-
-
-                          
-
-<!-----------------------------######O menu suspenso começa aqui######-->
-                            <ul class="dropdown-menu">
-
-
-                                <!-- A imagem do usuário no menu -->
-                                <li class="user-header">
-                                   
-                                    
-                                </li>
-
-
-                                <!-- Corpo do Menu -->
-                                <li class="user-body">
-                                    <div class="row">
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">Conta</a>
-                                        </div>
-                                    </div>
-                                    <!-- /.row -->
-                                </li>
-
-
-                                <!-- Rodapé do Menu -->
-                                <li class="user-footer">
-
-
-                                    <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">Perfil</a>
-                                    </div>
-
-
-                                    <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">Sair</a>
-                                    </div>
-
-                                </li>
-
-
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-
-
-
-
-            </nav>
-        </header>
-        <!-- Coluna do Lado Esquerdo. Contém o logotipo e a barra lateral -->
-
-        <aside class="main-sidebar" >
-            <!-- Barra lateral: o estilo pode ser encontrado em sidebar.less -->
-            <section class="sidebar">
-
-                <!-- Menu da Barra Lateral -->
-                @Html.Partial("_MainMenu")
-                <!-- /.sidebar-menu -->
-            </section>
-            <!-- /.sidebar -->
-        </aside>
-        <!-- Área de Conteúdo. Contém o conteúdo da página -->
-        <div class="content-wrapper" style="padding:30px 40px 30px 40px; background-color: #F0FFFF">
-            <!-- Cabeçalho do Conteúdo (Cabeçalho da Página) -->
-            @RenderBody()
-            <!-- /.content -->
         </div>
-        <!-- /.content-wrapper -->
-        <!-- Rodapé Principal -->
-        <footer class="main-footer">
-            <!-- Posiciona à esquerda por padrão -->
-            <strong> 2023 - Sig Monografias Ifma - <a href="https://github.com/marcosreiss/MonografiasIfma.git">Código Aberto</a>.</strong>
-        </footer>
-    </div>
+        <div class="login">
+            Login
+        </div>
+    </header>
+
+    <nav class="menu-lateral">
+        <div class="btn-expandir">
+            <i class="fa-solid fa-bars" id="btn-exp"></i>
+        </div><!---btn expandir-->
+        <ul>
+            <li class="item-menu ativo">
+                <a href="#">
+                    <span class="icon"><i class="fa-solid fa-house"></i></span>
+                    <span class="txt-link">Home</span>
+                </a>
+            </li>
+
+            <li class="item-menu">
+                <a href="#">
+                    <span class="icon"><i class="fa-regular fa-file-pdf"></i></span>
+                    <span class="txt-link">Monografias</span>
+                </a>
+            </li>
+
+            <li class="item-menu">
+                <a href="#">
+                    <span class="icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                    <span class="txt-link">Dircentes</span>
+                </a>
+            </li>
+
+            <li class="item-menu">
+                <a href="#">
+                    <span class="icon"><i class="fa-solid fa-chalkboard-user"></i></span>
+                    <span class="txt-link">Docentes</span>
+                </a>
+            </li>
+
+            <li class="item-menu">
+                <a href="#">
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <span class="txt-link">Funcionários</span>
+                </a>
+            </li>
+        </ul>
+    </nav> <!--Menu lateral-->
 
 
 
 
-    <!-- ./wrapper -->
-    <!-- SCRIPTS JS NECESSÁRIOS -->
-    <!-- jQuery 3 -->
-    <script src="~/bower_components/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap 3.3.7 -->
-    <script src="~/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="~/dist/js/adminlte.min.js"></script>
-    <!-- DataTables jQuery -->
-    <script src="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.js"></script>
+    <script src="~/js/dashboard.js"></script>
 
-    <script src="~/js/site.js" asp-append-version="true"></script>
 
-    <!-- links do font awesome pra usar icones--> 
     <script src="https://kit.fontawesome.com/a37571b192.js" crossorigin="anonymous"></script>
-
-    @await RenderSectionAsync("Scripts", required: false)
-
 </body>
-
 </html>
