@@ -19,77 +19,75 @@ html {
 
 body {
     margin-bottom: 60px;
+    background-color: #202020;
 }
 
-.menuLi {
-    border-radius: 10px;
-    background-color: #E0D7D7;
-    /*color: #36BA2B;*/
-    color:black;
-    margin-top: 5px;
-    font-size: 20px; /* Tamanho padrão da fonte */
-    transition: background-color 0.3s;
+.mono-index {
+    padding-left: 100px;
+    padding-right: 30px;
 }
 
-    .menuLi:hover {
-        background-color: #A9A9A9;
-        color: white;
-    }
-
-
-.edit-button {
-
-    background-color: #3498db;
-    color: black;
-    font-weight: bold; /* Negrito */
-}
-
-.detalhe-button {
-
-    background-color: #00FF7F;
-    color: black;
-    font-weight: bold; /* Negrito */
-}
-
-.delete-button {
-
-    background-color: #FA8072;
-    color: black;
-    font-weight: bold; /* Negrito */
-}
-
-.edit-button:hover {
-
-    background-color: #0000FF; /* Mudança de cor no hover */
+.index-title {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: bold;
     color: white;
 }
 
-.detalhe-button:hover {
-
-    background-color: #006400; /* Mudança de cor no hover */
-    color: white;
-    font-weight: bold; /* Negrito */
+#index-tables{
+    color:white;
 }
 
-.delete-button:hover {
 
-    background-color: #FF0000; /* Mudança de cor no hover */
-    color: white;
-}
 
 .criar-button {
     border-radius: 10px;
-    background-color: #00FF7F;
-    color: black;
-    font-weight: bold; /* Negrito */
+    background-color: #5cb176;
+    color: white;
     font-size: 20px;
     display: inline-block;
     text-align: center;
-    line-height: 30px;
+    padding: 8px 12px;
+    border: none;
+    text-decoration: none;
+    margin-bottom: 20px;
 }
 
-    .criar-button:hover {
-        opacity: 90%;
+
+.criar-button:hover {
+    background-color: #4f9665;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 10px;
+    left:8px;
+    background-color: white;
+    border-radius: 10px;
+    display: none;
+    z-index: 1;
+}
+.my-dropdown {
+    position: relative;
+    display: flex
+    justify-content: center;
+    align-items: center;
+}
+.my-dropdown:hover .dropdown-menu {
+    display: block;
+    
+}
+
+.dropdown-button {
+    color: #202020;
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+    border-radius: 10px;
+}
+    .dropdown-button:hover {
+        background-color: #5cb176;
     }
 
 .voltar-button {
@@ -103,20 +101,11 @@ body {
     line-height: 20px;
 }
 
-    .voltar-button:hover {
-        background-color: #696969; /* Mudança de cor no hover */
-        color: white;
-        font-weight: bold; /* Negrito */
-    }
-
-.mono-index {
-    padding-left: 100px;
-    padding-right: 30px;
+.voltar-button:hover {
+    background-color: #696969; /* Mudança de cor no hover */
+    color: white;
+    font-weight: bold; /* Negrito */
 }
-.index-title{
-    display: flex;
-    justify-content: center;
-    font-size: 50px;
-    font-weight: bold;
 
-}
+
+
