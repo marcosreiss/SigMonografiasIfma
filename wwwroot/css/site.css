@@ -88,11 +88,9 @@ body {
     line-height: 30px;
 }
 
-.criar-button:hover {
-    background-color: #006400; /* Mudança de cor no hover */
-    color: white;
-    font-weight: bold; /* Negrito */
-}
+    .criar-button:hover {
+        opacity: 90%;
+    }
 
 .voltar-button {
     border-radius: 10px;
@@ -110,3 +108,15 @@ body {
         color: white;
         font-weight: bold; /* Negrito */
     }
+
+.mono-index {
+    padding-left: 100px;
+    padding-right: 30px;
+}
+.index-title{
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: bold;
+
+}
