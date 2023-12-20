@@ -4,69 +4,75 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Monografias</h1>
+<div class="mono-index">
+    <h1 class="index-title">Monografias</h1>
 
-<br/>
+    <br />
 
-<p >
-    <a class="btn criar-button"  asp-action="Create">
-        <img src="~/imgs/adicionar.png" style="vertical-align: middle; margin-right: 10px;"></img>
-        <span style="vertical-align: middle;">adicionar</span>
-    </a>
-</p>
-<br />
-<table class="table " id="index-tables">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Titulo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataApresentacao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.QtPaginas)
-            </th>
-            @* <th>
-            @Html.DisplayNameFor(model => model.Pdf_ArquivoBinario)
-            </th> *@
-            <th>
-                @Html.DisplayNameFor(model => model.Aluno)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Orientador)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+        <a asp-controller="Monografia" asp-action="Create" class="btn criar-button"> 
+            <i class="fa-solid fa-plus"></i>
+            Cadastrar Monografia 
+        </a>
+        
+    <table class="table" id="index-tables">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Titulo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DataApresentacao)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.QtPaginas)
-                </td>
-                @*  <td>
-            @Html.DisplayFor(modelItem => item.Pdf_ArquivoBinario)
-            </td> *@
-                <td>
-                    @Html.DisplayFor(modelItem => item.Aluno.Nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Orientador.Nome)
-                </td>
-                <td>
-                    <a class="btn edit-button" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                    <a class="btn detalhe-button" asp-action="Details" asp-route-id="@item.Id">Details</a>
-                    <a class="btn delete-button" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
+                <th></th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Titulo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataApresentacao)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.QtPaginas)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Aluno)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Orientador)
+                </th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="my-dropdown">
+
+                        <button onclick="toggleDropdown()">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+
+                        <div id="dropdown-menu-id" class="dropdown-menu">
+                            <a class="btn dropdown-button" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                            <a class="btn dropdown-button" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                            <a class="btn dropdown-button" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </div>
+                        
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Titulo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataApresentacao)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.QtPaginas)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Aluno.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Orientador.Nome)
+                    </td>
+                </tr>
+                
+
+            }
+        </tbody>
+    </table>
+</div>

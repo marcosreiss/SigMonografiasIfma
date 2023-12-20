@@ -4,62 +4,66 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
-<div>
-    <h4>Monografia</h4>
-    <hr />
-    <dl class="row">
+<div class="mono-crud">
+    <h1>Details</h1>
+    <div>
+        <h4>Monografia</h4>
+        <dl class="row sites-details">
 
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Titulo)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Titulo)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DataApresentacao)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DataApresentacao)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.QtPaginas)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.QtPaginas)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.checksum)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.checksum)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Pdf_ArquivoBinario)
-        </dt>
-        <dd class="col-sm-10">
-            <embed src="data:application/pdf;base64,@Convert.ToBase64String(Model.Pdf_ArquivoBinario)" width="100%" height="600" type="application/pdf">
-            <a href="data:application/pdf;base64,@Convert.ToBase64String(Model.Pdf_ArquivoBinario)" download="@($"{Model.Titulo}.pdf")">Baixar PDF</a>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Titulo)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Titulo)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DataApresentacao)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DataApresentacao)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.QtPaginas)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.QtPaginas)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.checksum)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.checksum)
+            </dd>
+            
+           
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Aluno)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Aluno.Nome)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Orientador)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Orientador.Nome)
+            </dd>
+        </dl> <!--Mono info-->
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Pdf_ArquivoBinario)
+            </dt>
+            <dd class="col-sm-10 sites-visualizar-pdf">
+                <embed src="data:application/pdf;base64,@Convert.ToBase64String(Model.Pdf_ArquivoBinario)" type="application/pdf">
+                <a href="data:application/pdf;base64,@Convert.ToBase64String(Model.Pdf_ArquivoBinario)" download="@($"{Model.Titulo}.pdf")">Baixar PDF</a>
+            </dd>
+        </dl>
+    </div>
 
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Aluno)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Aluno.Nome)
-        </dd>
-        <br></br>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Orientador)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Orientador.Nome)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a class="btn voltar-button" asp-action="Index">
-        <img src="~/imgs/volte.png"></img>
-        <span>voltar</span>
-    </a>
+    @* <div>
+        <a class="btn voltar-button" asp-action="Index">
+            <img src="~/imgs/volte.png"></img>
+            <span>voltar</span>
+        </a>
+    </div> *@
 </div>

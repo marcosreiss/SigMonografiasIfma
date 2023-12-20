@@ -47,6 +47,7 @@ namespace SigMonografiasIfma.Controllers
             return View(aluno);
         }
 
+        [HttpPost]
         // GET: Aluno/Create
         public IActionResult Create()
         {
