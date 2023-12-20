@@ -4,58 +4,54 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Editar</h1>
+<div class="mono-crud">
+    <h1>Editar</h1>
 
-<h4>Monografia</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit" method="post" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Titulo" class="control-label"></label>
-                <input asp-for="Titulo" class="form-control" />
-                <span asp-validation-for="Titulo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataApresentacao" class="control-label"></label>
-                <input asp-for="DataApresentacao" class="form-control" />
-                <span asp-validation-for="DataApresentacao" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="QtPaginas" class="control-label"></label>
-                <input asp-for="QtPaginas" class="form-control" />
-                <span asp-validation-for="QtPaginas" class="text-danger"></span>
-            </div>
-            <<div class="form-group">
-                <label asp-for="Pdf_ArquivoBinario" class="control-label"></label>
-                <small id="pdfHelp" class="form-text text-muted">Adicione o arquivo PDF da monografia aqui.</small>
-                <span asp-validation-for="Pdf_ArquivoBinario" class="text-danger"></span>
-                <input type="file" accept="application/pdf" name="newPdfFile" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="AlunoId" class="control-label"></label>
-                <select asp-for="AlunoId" class="form-control" asp-items="ViewBag.AlunoId"></select>
-                <span asp-validation-for="AlunoId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="OrientadorId" class="control-label"></label>
-                <select asp-for="OrientadorId" class="form-control" asp-items="ViewBag.OrientadorId"></select>
-                <span asp-validation-for="OrientadorId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Salvar" class="btn criar-button" style="width:140px" />
-            </div>
-        </form>
+    <h4>Monografia</h4>
+    <div class="row">
+        <div class="col-md-4 sites-formulario">
+            <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="sites-form-group">
+                    <label asp-for="Titulo" class="control-label"></label>
+                    <input asp-for="Titulo" class="form-control" />
+                    <span asp-validation-for="Titulo" class="text-danger"></span>
+                </div>
+                <div class="sites-form-group">
+                    <label asp-for="DataApresentacao" class="control-label"></label>
+                    <input asp-for="DataApresentacao" class="form-control" />
+                    <span asp-validation-for="DataApresentacao" class="text-danger"></span>
+                </div>
+                <div class="sites-form-group">
+                    <label asp-for="QtPaginas" class="control-label"></label>
+                    <input asp-for="QtPaginas" class="form-control" />
+                    <span asp-validation-for="QtPaginas" class="text-danger"></span>
+                </div>
+                <div class="sites-form-group">
+                    <label asp-for="Pdf_ArquivoBinario" class="control-label"></label>
+                    <small id="pdfHelp" class="form-text text-muted">Adicione o arquivo PDF da monografia aqui.</small>
+                    <span asp-validation-for="Pdf_ArquivoBinario" class="text-danger"></span>
+                    <input type="file" accept="application/pdf" name="newPdfFile" id="sites-iput-file" />
+                </div>
+                <div class="sites-form-group">
+                    <label asp-for="AlunoId" class="control-label"></label>
+                    <select asp-for="AlunoId" class="form-control" asp-items="ViewBag.AlunoId"></select>
+                    <span asp-validation-for="AlunoId" class="text-danger"></span>
+                </div>
+                <div class="sites-form-group">
+                    <label asp-for="OrientadorId" class="control-label"></label>
+                    <select asp-for="OrientadorId" class="form-control" asp-items="ViewBag.OrientadorId"></select>
+                    <span asp-validation-for="OrientadorId" class="text-danger"></span>
+                </div>
+                <div>
+                    <input type="submit" value="Salvar" class="submit-button" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a class="btn voltar-button" asp-action="Index" style="width:140px">
-        <img src="~/imgs/volte.png"></img>
-        <span>voltar</span>
-    </a>
+    
 </div>
 
 @section Scripts {

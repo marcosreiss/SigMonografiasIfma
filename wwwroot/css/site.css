@@ -27,7 +27,21 @@ body {
     padding-right: 30px;
 }
 
-.index-title {
+.mono-crud{
+    padding-left: 120px; padding-right: 30px;
+    color: white;
+    height: 110vh;
+}
+
+.mono-crud h4 {
+    justify-content: center;
+    display: flex;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.index-title, .mono-crud h1 {
     display: flex;
     justify-content: center;
     font-size: 50px;
@@ -37,6 +51,44 @@ body {
 
 #index-tables{
     color:white;
+}
+
+.sites-formulario {
+    background-color: #5cb176;
+    max-width: 520px;
+    margin:auto;
+    display: flex;
+    justify-content:center;
+    padding: 50px 50px;
+    border-radius: 10px;
+}
+
+.sites-formulario form{
+    width: 100%;
+}
+
+.sites-formulario input{
+    padding: 5px 20px;
+    border: none;
+    border-radius: 20px;
+    margin-left: 10px;
+}
+
+.sites-form-group{
+    margin-bottom: 30px;
+}
+
+#sites-iput-file {
+    margin: 0;
+    padding: 5px 20px 5px 1px;
+    display: inline-block;
+    border-radius: 0;
+}
+
+.submit-button {
+    font-size: 18px;
+    font-weight: bold;
+    color: #202020;
 }
 
 
@@ -54,7 +106,6 @@ body {
     margin-bottom: 20px;
 }
 
-
 .criar-button:hover {
     background-color: #4f9665;
 }
@@ -62,21 +113,31 @@ body {
 .dropdown-menu {
     position: absolute;
     top: 10px;
-    left:8px;
+    left: 29px;
     background-color: white;
     border-radius: 10px;
     display: none;
     z-index: 1;
 }
+
 .my-dropdown {
     position: relative;
-    display: flex
-    justify-content: center;
-    align-items: center;
 }
 .my-dropdown:hover .dropdown-menu {
     display: block;
-    
+}
+
+.my-dropdown button{
+    background-color: #202020;
+    border: none;
+}
+
+.my-dropdown button i {
+    color: #ffffff;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer
 }
 
 .dropdown-button {
@@ -85,16 +146,28 @@ body {
     display: block;
     padding: 5px;
     border-radius: 10px;
+    cursor: pointer;
 }
-    .dropdown-button:hover {
-        background-color: #5cb176;
-    }
+
+.dropdown-button:hover {
+    background-color: #5cb176;
+}
+
+/*Data Table style*/
+.dataTables_filter label, #index-tables_info, #index-tables_paginate {
+    color: white;
+}
+
+
+/*Data Table style end */
+
+
 
 .voltar-button {
     border-radius: 10px;
     background-color: #D3D3D3;
     color: black;
-    font-weight: bold; /* Negrito */
+    font-weight: bold;
     font-size: 15px;
     display: inline-block;
     text-align: center;
@@ -102,9 +175,42 @@ body {
 }
 
 .voltar-button:hover {
-    background-color: #696969; /* Mudança de cor no hover */
+    background-color: #696969;
     color: white;
-    font-weight: bold; /* Negrito */
+    font-weight: bold;
+}
+
+.sites-visualizar-pdf{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+.sites-visualizar-pdf embed{
+    width: 100%;
+    height: 500px;
+}
+.sites-visualizar-pdf a{
+    margin: 10px 0;
+    padding: 5px 10px;
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.sites-details {
+    background-color: #5cb176;
+    max-width: 650px;
+    margin: auto;
+    padding: 50px 50px;
+    border-radius: 10px;
+    
+}
+
+.sites-details dd{
+    margin-bottom: 5px;
 }
 
 

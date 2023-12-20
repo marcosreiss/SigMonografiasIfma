@@ -13,7 +13,7 @@
             <i class="fa-solid fa-plus"></i>
             Cadastrar Monografia 
         </a>
-    
+        
     <table class="table" id="index-tables">
         <thead>
             <tr>
@@ -41,8 +41,12 @@
             {
                 <tr>
                     <td class="my-dropdown">
-                        <i class="fa-solid fa-ellipsis-vertical" style="color: #ffffff; width: 50px; height:40px"></i>
-                        <div class="dropdown-menu">
+
+                        <button onclick="toggleDropdown()">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </button>
+
+                        <div id="dropdown-menu-id" class="dropdown-menu">
                             <a class="btn dropdown-button" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
                             <a class="btn dropdown-button" asp-action="Details" asp-route-id="@item.Id">Details</a>
                             <a class="btn dropdown-button" asp-action="Delete" asp-route-id="@item.Id">Delete</a>

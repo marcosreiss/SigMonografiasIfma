@@ -15,15 +15,15 @@
     <!-- DataTables CSS -->
     <link href="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.css" rel="stylesheet">
     <link rel="stylesheet" href="~/css/site.css" />
-
+    <link rel="icon" href="~/artigo.ico" />
     <title>@ViewData["Title"]</title>
 </head>
 <body>
 
     <header class="cabecalho">
         <div class="logo">
-            <a href="#">
-                <img src="imgs/Sigmono.png" alt="sig Monografias Ifma">
+            <a asp-controller="Monografia" asp-action="Index">
+                <img src="~/imgs/Sigmono.png" alt="sig Monografias Ifma">
             </a>
         </div>
         <div class="login">
@@ -44,28 +44,28 @@
             </li>
 
             <li class="item-menu">
-                <a href="#">
+                <a asp-controller="Monografia" asp-action="Index">
                     <span class="icon"><i class="fa-regular fa-file-pdf"></i></span>
                     <span class="txt-link">Monografias</span>
                 </a>
             </li>
 
             <li class="item-menu">
-                <a href="#">
+                <a asp-controller="Aluno" asp-action="Index">
                     <span class="icon"><i class="fa-solid fa-graduation-cap"></i></span>
                     <span class="txt-link">Dircentes</span>
                 </a>
             </li>
 
             <li class="item-menu">
-                <a href="#">
+                <a asp-controller="Professor" asp-action="Index">
                     <span class="icon"><i class="fa-solid fa-chalkboard-user"></i></span>
                     <span class="txt-link">Docentes</span>
                 </a>
             </li>
 
             <li class="item-menu">
-                <a href="#">
+                <a asp-controller="Funcionario" asp-action="Registro">
                     <span class="icon"><i class="fa-solid fa-user"></i></span>
                     <span class="txt-link">Funcionários</span>
                 </a>
@@ -96,6 +96,8 @@
     <script src="https://kit.fontawesome.com/a37571b192.js" crossorigin="anonymous"></script>
 
     <script src="~/js/dashboard.js"></script>
+
+    @RenderSection("Scripts", required: false)
 
 
 </body>
